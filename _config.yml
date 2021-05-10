@@ -58,6 +58,6 @@ collections:
          pages: false
          collections: []
      exclude:
-         files: [search.html, index.html, tags.html]
+         files: [search.html, index.html]
          categories: []
          tags: []
