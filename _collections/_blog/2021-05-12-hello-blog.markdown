@@ -1,0 +1,17 @@
+---
+layout: post
+title:  Hello Blog
+author: Kenna
+date:   2021-05-12 10:26:35 +0830
+image: https://images.unsplash.com/photo-1515446808777-87f69cb475aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+rating: 2
+description: 깃헙 블로그 첫 제작
+---
+
+​
+테마 맘에 든다<br>
+​
+사진은 전부 처리해서 올려야만 되는걸까 사이즈가 다르네<br>
+나중에 수정해야하는건가 이건 어렵네. 그냥 정해놓고 써볼까<br>
+​
+좀 당황스러운데
