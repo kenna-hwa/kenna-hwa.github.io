@@ -5,11 +5,11 @@ author: Kenna
 date:   2021-05-13 21:30:35 +0830
 image: https://images.unsplash.com/photo-1586162481176-7abc53f1f7c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODZ8fHN0dWR5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 rating: 3
-description: 오늘 수업 복습
+description: 수업 복습
 ---
 
 
-##### 사용자 정의 함수
+###### 사용자 정의 함수
 
 - 사용자가 임의로 생성한 함수
 
@@ -34,7 +34,7 @@ description: 오늘 수업 복습
 
 
 
-##### 이벤트
+###### 이벤트
 
 - 이벤트는 상황이라는 뜻, ~~하는 행위를 나타낼 때 사용한다.
     - load
@@ -83,7 +83,7 @@ function testFunc() {<br>
     setTimeout은 ms단위의 시간 이후에 첫번째 파라미터에 들어가 있는 함수를 실행하는 내장함수
 
 
-##### DOM (Document Object Model)
+###### DOM (Document Object Model)
 
 - HTML 요소에 접근하는 표준화된 방식
 
@@ -91,7 +91,7 @@ function testFunc() {<br>
 
 <br>
 
-##### getElementById("element#id") 객체의 생성
+###### getElementById("element#id") 객체의 생성
 
 - DOM 코어 / HTML - DOM
 
