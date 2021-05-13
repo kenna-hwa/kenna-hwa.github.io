@@ -15,7 +15,16 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: 'Noto Serif KR', "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+.jumbotron>p:first-child {
+  font-family: 'Noto Serif KR'!important;
+}
+
+p {
+  font-family: 'Noto Sans KR', sans-serif!important;
+  font-weight: 200!important;
 }
 
 .zoom {
@@ -88,6 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
   color: #999;
 }
+
 
 @media (min-width: 40em) {
   .blog-title {

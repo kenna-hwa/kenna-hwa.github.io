@@ -3,7 +3,7 @@ layout: post
 title:  Hello Blog
 author: Kenna
 date:   2021-05-12 10:26:35 +0830
-image: https://images.unsplash.com/photo-1515446808777-87f69cb475aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80
+image: https://github.com/kenna-hwa/kenna-hwa.github.io/blob/master/assets/images/blog/helloblog/mytoughexperience.jpg?raw=true
 rating: 2
 description: 깃헙 블로그 첫 제작
 ---
