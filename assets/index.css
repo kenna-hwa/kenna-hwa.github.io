@@ -25,6 +25,10 @@ h6 {
 
 } 
 
+.jumbotron>h1{
+  text-align: center!important;
+}
+
 .jumbotron>p {
   font-family: 'Noto Serif KR'!important;
   text-align: center;

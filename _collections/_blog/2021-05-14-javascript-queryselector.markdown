@@ -1,24 +1,15 @@
 ---
 layout: post
-title: _collection/_blog/2021-05-14-javascript-queryselector
-author: John F. Kennedy
-date: '1963-06-26 20:20:35 +0200'
-image: 'https://i.ytimg.com/vi/JAAOEC2fV_8/maxresdefault.jpg'
-rating: 3
-description: 'All free men, wherever they may live, are citizens of Berlin - says JFK.'
-published: true
----
----
-layout: post
 title:  "Javascript QuerySeletor"
 author: Kenna
 date:   2021-05-14 14:50:35 +0830
-image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
+image: https://images.unsplash.com/photo-1586162481176-7abc53f1f7c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODZ8fHN0dWR5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 rating: 4
 description: 수업 복습
 ---
 
-##### getElementBy
+
+###### getElementBy
 
 어떤 태그이건 상관 없으나 id 값이 있어야 하고 id 값은 메모리 하나를 차지하기 때문에 때로는 효율이 나쁠수도 있다.
 
@@ -35,7 +26,7 @@ description: 수업 복습
 - document.getElementsByTagNameNS("웹사이트의 주소, 태그이름").value = "웹 사이트의 주소, 태그 이름";
 
 
-##### querySelector
+###### querySelector
 
 getElementBy 처럼 태그의 종류 상관없으며 값의 입력 방식이 CSS와 같다.
 querySelectorAll은 호환이 안되는 경우가 있기 때문에 안정성이 떨어진다.
@@ -49,7 +40,7 @@ querySelectorAll은 호환이 안되는 경우가 있기 때문에 안정성이 
 - document.querySelector( "ClassName" ).value = "쿼리셀렉터 - 클래스 이름";
 
 
-##### 변수에 담아두기 -> 객체(object)
+###### 변수에 담아두기 -> 객체(object)
 
 - 객체(object) 생성 
   var obj = document.getElementById(" idName ");
@@ -78,7 +69,7 @@ obj.attribute_name;
 다만, HTML에서 사용하는 속성만 만질 수 있으며 없는 속성값에는 적용되지 않는다.
 
 
-##### DOM-CORE
+###### DOM-CORE
 
 HTML에 **없는** 속성값도 사용 가능하다.
 
