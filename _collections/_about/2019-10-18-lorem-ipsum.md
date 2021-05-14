@@ -19,8 +19,6 @@ Regentropfen,
 dass er mich
 erschlagen könnte. 
 
-
-
 내가 사랑하는 사람이
 나에게 말했다.
 "당신이 필요해요"

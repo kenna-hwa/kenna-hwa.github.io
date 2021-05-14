@@ -53,11 +53,12 @@ collections:
   etc:
     output: true
 
-    tipue_search:
+    
+ tipue_search:
      include:
          pages: false
          collections: []
      exclude:
-         files: [search.html, index.html]
+         files: [search.html, index.html, tags.html]
          categories: []
          tags: []
