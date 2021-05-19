@@ -5,11 +5,11 @@ author: Kenna
 date:   2021-05-19 22:45:00 +0830
 image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
 rating: 4
-description: MDN 문서
+description: MDN 문서 HTTP 개요
 ---
 
 ###### HTTP 
-<a herf="https://developer.mozilla.org/ko/docs/Web/HTTP">MDN 보러가기</a>
+[MDN 보러가기]("https://developer.mozilla.org/ko/docs/Web/HTTP")
 
 **HTTP HyperText Transfer Protocol**
 - 하이퍼미디어(데이터 종류에 제약이 없음) 문서를 전송하기 위한 프로토콜
@@ -20,7 +20,7 @@ description: MDN 문서
 - 현재 http v1.1이 가장 널리 쓰인다.
 
 **요청과 응답**<br>
-[클라이언트-프록시-프록시-서버](https://mdn.mozillademos.org/files/13679/Client-server-chain.png)
+![클라이언트-프록시-프록시-서버](https://mdn.mozillademos.org/files/13679/Client-server-chain.png)
 1. 클라이언트의 개별적인 요청
 2. 서버로 보내짐
 3. 서버는 받은 요청을 처리
@@ -74,8 +74,8 @@ description: MDN 문서
 - 요청 URL : 가져오려는 리소스의 경로
 - HTTP 버전
 - 빈 줄
-- 요청 바디
-[Method, Path, Version of the protocol, Headers](https://mdn.mozillademos.org/files/13679/Client-server-chain.png)
+- 요청 바디<br>
+![Method, Path, Version of the protocol, Headers](https://mdn.mozillademos.org/files/13687/HTTP_Request.png)
 
 
 **응답 데이터 포맷**<br>
@@ -90,14 +90,15 @@ description: MDN 문서
        - 콘텐츠 길이<br>
 - 빈 줄
 - 응답 바디
-- 실제 응답 리소스 데이터
-[Version of the protocol, Status code, Status message, Header](https://mdn.mozillademos.org/files/13691/HTTP_Response.png)
+- 실제 응답 리소스 데이터<br>
+![Version of the protocol, Status code, Status message, Header](https://mdn.mozillademos.org/files/13691/HTTP_Response.png)
 
 
 
 ###### HTTP 메시지
 
-초기 HTTP와 HTTPv1.1의 메시지는 사람이 읽을 수 있었으나 HTTPv2에서는 프레임 안에 임베드 되어 최적화된다. 그러나 각 메세지들의 의미는 변하지 않으며 클라이언트는 본래의 HTTPv1.1 요청을 가상으로 재구성한다. 
+초기 HTTP와 HTTPv1.1의 메시지는 사람이 읽을 수 있었으나 HTTPv2에서는 프레임 안에 임베드 되어 최적화된다.<br>
+그러나 각 메세지들의 의미는 변하지 않으며 클라이언트는 본래의 HTTPv1.1 요청을 가상으로 재구성한다. 
 
 
 ###### HTTP 기반 API
