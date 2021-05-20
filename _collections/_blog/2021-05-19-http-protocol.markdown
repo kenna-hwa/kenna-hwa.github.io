@@ -4,7 +4,7 @@ title:  "[HTTP] HTTP protocol"
 author: Kenna
 date:   2021-05-19 22:45:00 +0830
 image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
-rating: 4
+rating: 5
 description: MDN 문서 | HTTP 개요
 ---
 

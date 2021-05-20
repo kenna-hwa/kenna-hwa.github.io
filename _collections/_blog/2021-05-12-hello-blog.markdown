@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Hello Blog
+title:  "[Daily] Hello Blog"
 author: Kenna
 date:   2021-05-12 10:26:35 +0830
 image: https://github.com/kenna-hwa/kenna-hwa.github.io/blob/master/assets/images/blog/helloblog/mytoughexperience.jpg?raw=true
