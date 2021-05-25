@@ -37,7 +37,8 @@ description: W3C | jQuery 문서
 ###### jQuery 구문
 
 **선택자 Selector**<br>
-jQuery 구문은 $달러-()소괄호-""따옴표 가 기본
+jQuery 구문은 $달러-()소괄호-""따옴표 가 기본<br>
+{ } 중괄호 내부 개행 외에 개행은 안된다.
 
 - $(this).hide() : window, document, this는 ""쌍따옴표 붙이지 않음
 - $("p").hide() : element(tag) 선택은 태그 이름
@@ -52,12 +53,12 @@ jQuery 구문은 $달러-()소괄호-""따옴표 가 기본
     - $("element.className") : element 에서 className 클래스를 가진 태그 선택
     - $("element:first") : element 에서 첫번째 element를 선택
     - $("element li:first-child") : 모든 첫번째 element의 첫번째 li를 선택
-    - $("[href]") 모든 element 중 href 속성을 가진 element를 선택
-    - $("element[href='_blank']") href 속성의 값이 _blank인 element를 선택
-    - $("element[href!='_blank']") href 속성의 값이 _blank가 아닌 element를 선택
+    - $("[href]") : 모든 element 중 href 속성을 가진 element를 선택
+    - $("element[href='_blank']") : href 속성의 값이 _blank인 element를 선택
+    - $("element[href!='_blank']") : href 속성의 값이 _blank가 아닌 element를 선택
     - $(":button") : 모든 button element와 input element 중 button 타입을 가진 element를 선택
-    - $("element:even") element 중 짝수 번째를 선택
-    - $("element:odd") element 중 홀수 번째를 선택
+    - $("element:even") : element 중 짝수 번째를 선택
+    - $("element:odd") : element 중 홀수 번째를 선택
 
 ###### jQuery 구문
 
