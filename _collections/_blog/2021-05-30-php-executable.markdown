@@ -14,7 +14,7 @@ msg : PHP executable not found. Install PHP 7 and add it to your PATH or set the
 
 ###### 1) 환경변수 셋팅
 
-순서<br>
+순서<br><br>
 작업표시줄에서 찾기 > 설정 > 고급 시스템 설정 보기 검색 > 클릭 > 고급 > 하단에 환경 변수 > 시스템 변수 스크롤 내려서 Path 찾기
 
 환경 변수 편집에 PHP경로가 삽입되어있는지 확인
