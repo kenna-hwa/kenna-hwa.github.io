@@ -14,7 +14,7 @@ msg : PHP executable not found. Install PHP 7 and add it to your PATH or set the
 
 ###### 1) 환경변수 셋팅
 
-순서
+순서<br>
 작업표시줄에서 찾기 > 설정 > 고급 시스템 설정 보기 검색 > 클릭 > 고급 > 하단에 환경 변수 > 시스템 변수 스크롤 내려서 Path 찾기
 
 환경 변수 편집에 PHP경로가 삽입되어있는지 확인
@@ -25,17 +25,18 @@ msg : PHP executable not found. Install PHP 7 and add it to your PATH or set the
 
 ###### 2) VScode 에서 셋팅
 
-VScode 왼쪽 아래 톱니바퀴 설정 > 설정 클릭 > 왼쪽 아래 확장 클릭
+VScode 왼쪽 아래 톱니바퀴 설정 > 설정 클릭 ><br>
+왼쪽 아래 확장 클릭
 확장에서 PHP 찾기
 PHP › Validate: Executable Path PHP 실행 파일을 가리킵니다. 아래의 
 **Setting.json에서 편집** 찾아서 클릭
 
-Setting.json의 가장 바깥 중괄호에
-**"php executablePath" : "php실행파일(.exe) 경로"**,
-**"php.validate.executablePath" : "php실행파일(.exe) 경로"**
-두개를 넣고 저장 (필요시 문장 각각 뒤에 쉼표 붙임)
+Setting.json의 가장 바깥 중괄호에<br><br>
+**"php executablePath" : "php실행파일(.exe) 경로"**,<br>
+**"php.validate.executablePath" : "php실행파일(.exe) 경로"**<br><br>
+두 개를 넣고 저장 (필요시 문장 각각 뒤에 쉼표 붙임)
 
-**여기서 그냥 속성에서 위치 확인한 것처럼 \ 한개씩만 붙이면 이스케이프 문자로 해석해서 적용이 안되니 C:\\Bitnami\\ 이런식으로 적어줘야 함**
+**여기서 그냥 속성에서 위치 확인한 것처럼 \ 한개씩만 붙이면 이스케이프 문자로 해석해서 적용이 안되니 C:\ \Bitnami\ \ 이런식으로 적어줘야 함**
 
 저장하고 
 VScode 재실행하면 끝!
