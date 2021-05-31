@@ -22,10 +22,12 @@ description: 수업 복습
 ex) ORACLE, MS-SQL, MY-SQL, MONGODB, MARIADB 등
 
 MY-SQL은 RDBMS(Relational DataBase Management System)
+<pre>
 <STRONG>
 DBMS   -   DATABASE   -   TABLE   -   DATA<BR>
  OS    -    FOLDER    -   FILE    -   TEXT
  </STRONG>
+ </pre>
 <BR>
 
 
@@ -89,7 +91,6 @@ WHERE 조건문;
 SELECT 필드명 FROM 테이블명
 WHERE NOT 조건문;
 </pre>
-<br>
 
 **그리고**<br>
 <pre>
@@ -97,7 +98,6 @@ SELECT 필드명 FROM 테이블명
 WHERE 조건문
 AND 조건문;
 </pre>
-<br>
 
 **또는**<br>
 <pre>
@@ -105,7 +105,7 @@ SELECT 필드명 FROM 테이블명
 WHERE 조건문
 OR 조건문;
 </pre>
-<br><BR>
+<br>
 
 
 **WHERE절의 연산자**<br>
@@ -131,7 +131,6 @@ SELECT 필드명
 FROM 테이블명
 ORDER BY 필드명 (ACS);
 </pre>
-<br>
 
 **내림차순**<br>
 <pre>
