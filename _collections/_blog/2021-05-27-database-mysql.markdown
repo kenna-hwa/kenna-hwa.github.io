@@ -55,7 +55,9 @@ DBMS   -   DATABASE   -   TABLE   -   DATA<BR>
 ###### 쿼리 구분
 
 - **DCL(데이터 제어어)** : 생성, 삭제에 관여 GRANT, REVOKE
-- **DDL(데이터 정의어)** : 데이터 공간에 관여 CREATE, ALTER, DROP
+- **DDL(데이터 정의어)** : 데이터 공간에 관여 CREATE, ALTER, DROP, TRUNCATE
+                            데이터를 담는 그릇 즉, 오브젝트를 정의하는 언어로
+                            오브젝트는 스키마, 도메인, 테이블, 뷰, 인덱스가 있다.
 - **DML(데이터 조작어)** : 데이터에 관여 INSERT UPDATE DELETE SELECT
 
 <BR><BR>
