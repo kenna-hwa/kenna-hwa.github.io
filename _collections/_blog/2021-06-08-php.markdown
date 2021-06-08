@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "[PHP] PHP 수업내용"
+author: Kenna
+date:   2021-06-08 21:26:35 +0830
+image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+rating: 14
+description: 수업 복습
+---
+
+###### PHP
+[PHP 공식 홈페이지]("https://www.php.net/")
+
+###### PHP
+
+같은 페이지 내에서 값을 가지고 올 수 있는 언어는 
+**자바스크립트**
+
+페이지와 페이지 사이에서 값(데이터)를 가지고 올 수 있는 언어가 **PHP** 이다.
+
+PHP 문법에서는 영문 대소문자를 구분해야 한다.
+ex) $_GET[""]
+
+PHP 문장 마지막에는 반드시 **;** 를 붙여야 한다.
+
+PHP에서 값을 가지고 오기 위해서는 HTML input 태그의 **name 속성**이 반드시 필요하다.
+따라서 form 태그들에는 반드시 name 값이 존재해야 한다.
+
+<br>
+<br>
+
+###### PHP 에서 변수 선언하기
+
+변수는 $로 선언한다.
+자바스크립트의 var 과 같다.
+ex) $a = "a";
+
+<br>
+
+###### HTML FORM 요소에서 값 가져오기
+
+- HTML : form - method - get방식 -> $_GET["필드의 name 속성값"];
+- HTML : form - method - post방식 -> $_POST["필드의 name 속성값"];
+
+<br>
+
+###### PHP 문서 내 내용을 브라우저에 출력
+
+자바스크립트의 document.write와 같다.
+
+**echo**
+ec) echo $변수
+
+
+<br>
+
+insert.php와 같이 사용자의 화면에 직접적으로 노출되지 않는 PHP페이지는 굳이 HTML 문법을 작성할 필요가 없다.
+
+한글로 출력되기 위해 상단에 charset 선언을 넣어준다.
+< meta charset="utf-8">
+
+
+###### XAMPP로 PHP 실시간 reload 이용하기
+
+1. xampp-control에서 apache 서버와 mysql 을 켠다.
+2. c:\xampp\htdocs 안에 사용할 파일을 넣는다.
+3. roofback(localhost)주소에 접근한다.
+4. localhost/index.php, 127.0.0.1/index.php 등으로 이용할 수 있다.
