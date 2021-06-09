@@ -13,62 +13,10 @@ description: 수업 복습
 
 ###### PHP
 
-같은 페이지 내에서 값을 가지고 올 수 있는 언어는 
-**자바스크립트**
-
-페이지와 페이지 사이에서 값(데이터)를 가지고 올 수 있는 언어가 **PHP** 이다.
-
-PHP 문법에서는 영문 대소문자를 구분해야 한다.
-ex) $_GET[""]
-
-PHP 문장 마지막에는 반드시 **;** 를 붙여야 한다.
-
-PHP에서 값을 가지고 오기 위해서는 HTML input 태그의 **name 속성**이 반드시 필요하다.
-따라서 form 태그들에는 반드시 name 값이 존재해야 한다.
-
-<br>
-<br>
-
-###### PHP 에서 변수 선언하기
-
-변수는 $로 선언한다.
-자바스크립트의 var 과 같다.
-ex) $a = "a";
-
-<br>
-
-###### HTML FORM 요소에서 값 가져오기
-
-- HTML : form - method - get방식 -> $_GET["필드의 name 속성값"];
-- HTML : form - method - post방식 -> $_POST["필드의 name 속성값"];
-
-<br>
-
-###### PHP 문서 내 내용을 브라우저에 출력
-
-자바스크립트의 document.write와 같다.
-
-**echo**<br>
-ex) echo $변수
-
-
-insert.php와 같이 사용자의 화면에 직접적으로 노출되지 않는 PHP페이지는 굳이 HTML 문법을 작성할 필요가 없다.
-
-한글로 출력되기 위해 상단에 charset 선언을 넣어준다.
-< meta charset="utf-8">
-
-
-###### XAMPP로 PHP 실시간 reload 이용하기
-
-1. xampp-control에서 apache 서버와 mysql 을 켠다.
-2. c:\xampp\htdocs 안에 사용할 파일을 넣는다.
-3. roofback(localhost)주소에 접근한다.
-4. localhost/index.php, 127.0.0.1/index.php 등으로 이용할 수 있다.
-
-
 
 ###### $변수 에 넘어오는 값 담기
 
+<pre>
 $u_name = $_POST["u_name"];
 $u_id = $_POST["u_id"];
 $u_pwd = $_POST["u_pwd"];
@@ -80,17 +28,22 @@ $addr1 = $_POST["addr1"];
 $addr2 = $_POST["addr2"];
 $agree = $_POST["agree"];
 $reg_date = date("Y-m-d");
+</pre>
 
-$reg_date에는 date 함수를 사용하고 안에는 날짜형식 작성
-$reg_date = date("형식);
-연도의 Y가 대문자면 네 자리(2000) y 소문자면 (00) 두 자리 연도
-시간 표시는 H 시간 : i 분 : s 초  (H 대문자는 24시간 h 소문자는 12시간)
+$reg_date에는 date 함수를 사용하고 안에는 날짜형식 작성<br>
+
+$reg_date = date("형식);<br>
+
+연도의 Y가 대문자면 네 자리(2000) y 소문자면 (00) 두 자리 연도<br>
+
+시간 표시는 H 시간 : i 분 : s 초  (H 대문자는 24시간 h 소문자는 12시간)<br><br>
 
 
 ###### 데이터베이스 연결하기 DB 접속
 
 mysql 5.x 버전까지는 mysql_connect 사용
-mysql 7.x 버전부터는 mysqli_connect 사용
+mysql 7.x 버전부터는 mysqli_connect 사용<br>
+
 
 **연결객체**<br>
 **mysqli_connect("HOST", "아이디", "비밀번호");**<br>
@@ -101,10 +54,11 @@ mysql 7.x 버전부터는 mysqli_connect 사용
 -> use front 랑 같다.
 
 mysqli_select_db(연결객체, "DB명")의
-연결객체는 위의 mysqli_connect이지만 저 코드를 다 집어 넣으면 너무 복잡하기 때문에
+연결객체는 위의 mysqli_connect이지만 저 코드를 다 집어 넣으면 너무 복잡하기 때문에<br>
+
 $dbcon = mysqli_connect("HOST", "아이디", "비밀번호");로
 변수에 담아 연결객체 파라미터 자리에 넣는다.
-<br>
+
 
 **mysqli_select_db($dbcon, "DB명");**<br>
 이렇게 쓸 수 있다.
@@ -115,54 +69,59 @@ $dbcon = mysqli_connect("HOST", "아이디", "비밀번호");로
 로 만든다.
 
 최종적으로
+
 <pre>
-<code>
-<?php
+< ?php
 
 $dbcon = mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 실패");
 
 ?>
-</code>
+
 </pre>
 
 로 연결할 수 있다.
-
+<br><br>
 
 ###### mysqli charset 설정
 위와 같이 mysql DB에 연결하고 테이블에 데이터를 삽입하게 되면 한글이 깨질 수 있다.
 이 경우 문자셋 설정이 필요하다.
+
 <pre>
-<code>
-<?php
+
+< ?php
 
 $dbcon = mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 실패");
 mysqli_set_charset($dbcon, "utf8");
 
 ?>
-</code>
+
+
 </pre>
 
 아래에 charset 선언부를 붙여준다.
 
+<br><br>
 
 ###### 데이터베이스에 전달할 쿼리 생성
 
-PHP에서는 큰 따옴표 안에 변수를 넣는다.
-$variable = "value";
+PHP에서는 큰 따옴표 안에 변수를 넣는다.<br>
 
-각 변수를 구분하는 ,는 문자다.
+**$variable = "value";**
+
+각 변수를 구분하는 ,는 문자다.<br>
+
 
 따라서 아래와 같이 쉼표와 변수를 구분한다.
 
-'".$name."'
+**'".$name."'**
+<br>
 
-"따옴표와 변수를 . 연산자로 이어준다.
-
+"따옴표와 변수를 **.** 연산자로 이어준다.
 insert 문을 아래와 같이 생성할 수 있다.
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 insert into members (
 u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date)
@@ -170,14 +129,14 @@ values('".$u_name."','".$u_id."','".$u_pwd."','".$mobile."','".$email."', '".$bi
 );
 
 ?>
-</code>
+
 </pre>
 
 만약 데이터를 화면에 출력해야 한다면 아래와 같이 사용한다.
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 echo "insert into members (
 u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date)
@@ -185,26 +144,26 @@ values('".$u_name."','".$u_id."','".$u_pwd."','".$mobile."','".$email."', '".$bi
 );";
 
 ?>
-</code>
+
 </pre>
 
 하지만 전체를 쌍따옴표로 감싼다면 작은따옴표만을 이용해 변수와 쉼표를 구별할 수 있다.
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 echo "insert into members (u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date) values ('$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');";
 
 ?>
-</code>
+
 </pre>
 
 이 경우엔 개행도 가능하다.
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 echo "insert into members (
     u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date
@@ -212,24 +171,27 @@ echo "insert into members (
         '$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');"; 
 
 ?>
-</code>
+
 </pre>
 
 위의 긴 코드를 실행시키기 위해서는 다시 변수에 담아 사용하는 것이 편하다.
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 $sql = "insert into members (
     u_name, u_id, u_pwd, mobile, email, birth, postalCode, addr1, addr2, reg_date
     ) values (
         '$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');";
 ?>
-</code>
+
 </pre>
 
 위의 코드를 echo $sql; 로 실행시켜도 echo "insert into ..." 와 결과는 같다.
+<br>
+<br>
+
 
 
 ###### 데이터베이스에 값 전달하기
@@ -244,31 +206,30 @@ $sql = "insert into members (
 두 개 다 변수에 미리 담아두었기 때문에 바로 변수로 사용할 수 있다.
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 mysqli_query($dbcon, $sql);
 
 ?>
-</code>
+
 </pre>
 
 변수에 안 담아두면 이렇게 된다.
 
 
 <pre>
-<code>
-<?php
+
+< ?php
 
 mysqli_query(mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 실패");, "insert into members (u_name, u_id, u_pwd, mobile, email, birth, postalCode, addr1, addr2, reg_date) values ('$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');";);
 
 ?>
-</code>
+
 </pre>
 
-
-...
-
+<br><br>
+![...](https://i.imgflip.com/1d1kyo.jpg))<br><br><br>
 
 ###### 데이터베이스 연결 종료
 
@@ -280,6 +241,7 @@ mysqli_query(mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 
 ()에 안 넣으면 
 https://stackoverflow.com/questions/24027546/warning-mysqli-close-expects-parameter-1-to-be-mysqli
 와 같은 오류가 생길 수 있다.
+<br>
 
 ###### 결과페이지로 이동
 
@@ -289,20 +251,18 @@ m.naver.com 처럼 주소를 바꿔준다.
 이 기능은 php언어로 구현하는 것이 아니라 script 언어로 구현한다.
 
 <pre>
-<code>
-<?php
+< ?php
 
 echo "
 
-    <script type=\"text/javascript\">
+    < script script type=\"text/javascript\">
     location.href=\"result.php\";
 
-    </script> 
+    </ script> 
     
 ";
 
 ?>
-</code>
 </pre>
 
 이 스크립트 코드를 echo에 넣어 화면에 출력하거나 
