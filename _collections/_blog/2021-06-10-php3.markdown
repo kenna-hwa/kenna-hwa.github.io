@@ -2,9 +2,9 @@
 layout: post
 title:  "[PHP] PHP 수업내용"
 author: Kenna
-date:   2021-06-09 17:26:35 +0830
+date:   2021-06-10 17:26:35 +0830
 image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
-rating: 15
+rating: 16
 description: 수업 복습
 ---
 
@@ -32,7 +32,7 @@ $reg_date = date("Y-m-d");
 
 $reg_date에는 date 함수를 사용하고 안에는 날짜형식 작성<br>
 
-$reg_date = date("형식);<br>
+$reg_date = date("형식"s);<br>
 
 연도의 Y가 대문자면 네 자리(2000) y 소문자면 (00) 두 자리 연도<br>
 
