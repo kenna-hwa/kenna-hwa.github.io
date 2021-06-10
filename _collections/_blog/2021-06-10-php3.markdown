@@ -14,261 +14,281 @@ description: 수업 복습
 ###### PHP
 
 
-###### $변수 에 넘어오는 값 담기
-
-<pre>
-$u_name = $_POST["u_name"];
-$u_id = $_POST["u_id"];
-$u_pwd = $_POST["u_pwd"];
-$mobile = $_POST["mobile"];
-$email = $_POST["email_id"]."@".$_POST["email_dns"];
-$birth = $_POST["birth"];
-$postalCode = $_POST["postalCode"];
-$addr1 = $_POST["addr1"];
-$addr2 = $_POST["addr2"];
-$agree = $_POST["agree"];
-$reg_date = date("Y-m-d");
-</pre>
-
-$reg_date에는 date 함수를 사용하고 안에는 날짜형식 작성<br>
-
-$reg_date = date("형식"s);<br>
-
-연도의 Y가 대문자면 네 자리(2000) y 소문자면 (00) 두 자리 연도<br>
-
-시간 표시는 H 시간 : i 분 : s 초  (H 대문자는 24시간 h 소문자는 12시간)<br><br>
+###### 로그인페이지 만들어서 로그인 진행하기
 
 
-###### 데이터베이스 연결하기 DB 접속
+login.php 파일에 html로 페이지 구성
 
-mysql 5.x 버전까지는 mysql_connect 사용
-mysql 7.x 버전부터는 mysqli_connect 사용<br>
+form action 값을 login_ok.php로 설정
 
-
-**연결객체**<br>
-**mysqli_connect("HOST", "아이디", "비밀번호");**<br>
--> mysql -h localhost -uroot -p 랑 같다.
-
-**DB와 연결**
-**mysqli_select_db(연결객체, "DB명");**<br>
--> use front 랑 같다.
-
-mysqli_select_db(연결객체, "DB명")의
-연결객체는 위의 mysqli_connect이지만 저 코드를 다 집어 넣으면 너무 복잡하기 때문에<br>
-
-$dbcon = mysqli_connect("HOST", "아이디", "비밀번호");로
-변수에 담아 연결객체 파라미터 자리에 넣는다.
-
-
-**mysqli_select_db($dbcon, "DB명");**<br>
-이렇게 쓸 수 있다.
-
-이것도 문장을 두 번 작성해야 하기 때문에 위의 "DB명"을 올려
-
-**$dbcon = mysqli_connect("HOST", "아이디", "비밀번호", "DB명");**<br>
-로 만든다.
-
-최종적으로
-
-<pre>
-< ?php
-
-$dbcon = mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 실패");
-
-?>
-
-</pre>
-
-로 연결할 수 있다.
 <br><br>
 
-###### mysqli charset 설정
-위와 같이 mysql DB에 연결하고 테이블에 데이터를 삽입하게 되면 한글이 깨질 수 있다.
-이 경우 문자셋 설정이 필요하다.
+###### login_ok.php 만들기
+
+**이전 페이지에서 데이터 가져오기**<br>
+
+변수명 = $_메소드방식["필드의 name 속성값"];
 
 <pre>
+< ? php
 
-< ?php
+$u_id = $_POST["u_id"]; //post 메소드로 전달받은 u_id(로그인 아이디)값을 변수에 넣는다.
+$u_pwd = $_POST["u_pwd"];//post 메소드로 전달받은 u_pwd(로그인 패스워드)값을 변수에 넣는다.
 
-$dbcon = mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 실패");
+? >
+</pre>
+
+넘어오는 데이터 확인하기
+
+<pre>
+< ? php
+
+echo "아이디:".$u_id."/"."비밀번호 :".$u_pwd;
+
+? >
+</pre>
+<br><br>
+
+###### 매번 써야하는 DB연결 include 하기
+
+
+**DB 연결**<br>
+
+<pre>
+< ? php
+
+$dbcon = mysqli_connect("localhost", "root", "", "front") or die("DB 접속 실패");
 mysqli_set_charset($dbcon, "utf8");
 
-?>
+? >
+</pre>
 
+위의 코드를 매번 삽입하는 것보다 외부 파일로 만들어서 삽입하는 것이 관리가 쉽다.(추후 호스트가 바뀌거나 할 때도 편하다. 외부 파일의 장점)
+
+외부 파일은
+
+<pre>
+
+< script src=""></ script> - javascript
+import "aa.src" - css
+obj.load("파일명.확장자")-jQuery
 
 </pre>
 
-아래에 charset 선언부를 붙여준다.
+이것들 처럼 PHP 에서는 **import** 로 삽입한다.
+
+
+파일을 불러올 위치에 <br>
+
+**include "../inc/dbcon.php";**<br>
+
+여러가지 방법이 있는데,
+include_once는 해당 파일을 한 번 만 불러와도 될 때 사용하고
+require은 좀 더 엄격한 방식이다.
+[참고할 네이버 블로그]("https://m.blog.naver.com/bgpoilkj/221274098558"
+)
 
 <br><br>
 
-###### 데이터베이스에 전달할 쿼리 생성
+###### 데이터베이스에서 id값과 pwd값 불러오기<br>
 
-PHP에서는 큰 따옴표 안에 변수를 넣는다.<br>
-
-**$variable = "value";**
-
-각 변수를 구분하는 ,는 문자다.<br>
-
-
-따라서 아래와 같이 쉼표와 변수를 구분한다.
-
-**'".$name."'**
-<br>
-
-"따옴표와 변수를 **.** 연산자로 이어준다.
-insert 문을 아래와 같이 생성할 수 있다.
+SELECT문은 INSERT UPDATE DELETE와 다르게 결괏값을 보여준다.
+그래서 SELECT문으로 데이터베이스에 있는 id 값과 pwd 값을 확인해서 사용자가 입력한 id,pwd값과 비교할 수 있다.
 
 <pre>
 
-< ?php
+< ? php
 
-insert into members (
-u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date)
-values('".$u_name."','".$u_id."','".$u_pwd."','".$mobile."','".$email."', '".$birth."','".$postalCode."','".$addr1."','".$addr2."','".$reg_date."'
-);
+$sql = "SELECT idx, u_name, u_id, u_pwd FROM members WHERE u_id='$u_id';";
 
-?>
+? >
 
 </pre>
 
-만약 데이터를 화면에 출력해야 한다면 아래와 같이 사용한다.
+echo $sql; 로 값을 확인해볼 수 있다.
+위의 쿼리가 실행되면 사용자가 id값을 맞게 넣어준 것
+
+
+**DB에 쿼리 전달하기**
+
+DB에 쿼리를 날리는 것은 항상 DB연결이 선행되어야 하므로 코드도 순서대로 짜야한다.
 
 <pre>
+< ? php
 
-< ?php
-
-echo "insert into members (
-u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date)
-values('".$u_name."','".$u_id."','".$u_pwd."','".$mobile."','".$email."', '".$birth."','".$postalCode."','".$addr1."','".$addr2."','".$reg_date."'
-);";
-
-?>
-
-</pre>
-
-하지만 전체를 쌍따옴표로 감싼다면 작은따옴표만을 이용해 변수와 쉼표를 구별할 수 있다.
-
-<pre>
-
-< ?php
-
-echo "insert into members (u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date) values ('$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');";
-
-?>
-
-</pre>
-
-이 경우엔 개행도 가능하다.
-
-<pre>
-
-< ?php
-
-echo "insert into members (
-    u_name, u_id, u_pw, mobile, email, birth, postalCode, addr1, addr2, reg_date
-    ) values (
-        '$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');"; 
-
-?>
-
-</pre>
-
-위의 긴 코드를 실행시키기 위해서는 다시 변수에 담아 사용하는 것이 편하다.
-
-<pre>
-
-< ?php
-
-$sql = "insert into members (
-    u_name, u_id, u_pwd, mobile, email, birth, postalCode, addr1, addr2, reg_date
-    ) values (
-        '$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');";
-?>
-
-</pre>
-
-위의 코드를 echo $sql; 로 실행시켜도 echo "insert into ..." 와 결과는 같다.
-<br>
-<br>
-
-
-
-###### 데이터베이스에 값 전달하기
-
-값을 전달하는 쿼리는<br>
-**mysqli_query("연결객체", "전달할 쿼리);**로 쓴다.
-
-여기서의 연결객체는 위의
-**mysqli_connect**쿼리이고 전달할 쿼리는
-위의 **insert into** 문이다.
-
-두 개 다 변수에 미리 담아두었기 때문에 바로 변수로 사용할 수 있다.
-
-<pre>
-
-< ?php
-
+//쿼리 보내는 함수
 mysqli_query($dbcon, $sql);
 
-?>
-
+? >
 </pre>
-
-변수에 안 담아두면 이렇게 된다.
-
+위의 함수를 변수에 넣어 사용한다.
 
 <pre>
+< ? php
 
-< ?php
+$result = mysqli_query($dbcon, $sql)
 
-mysqli_query(mysqli_connect("127.0.0.1", "root", "", "front") or die("DB 접속 실패");, "insert into members (u_name, u_id, u_pwd, mobile, email, birth, postalCode, addr1, addr2, reg_date) values ('$u_name','$u_id','$u_pwd','$mobile','$email','$birth','$postalCode','$addr1','$addr2','$reg_date');";);
-
-?>
-
+? >
 </pre>
 
 <br><br>
-![...](https://i.imgflip.com/1d1kyo.jpg))<br><br><br>
 
-###### 데이터베이스 연결 종료
+**결괏값 가져오기**
 
-데이터베이스를 연결해서 할 작업이 모두 종료되면 데이터베이스와의 연결을 끊는 것이 보안상 안전하다.
-
-연결 종료 쿼리는
-**mysqli_close($dbcon);** <br>
-
-()에 안 넣으면 
-https://stackoverflow.com/questions/24027546/warning-mysqli-close-expects-parameter-1-to-be-mysqli
-와 같은 오류가 생길 수 있다.
-<br>
-
-###### 결과페이지로 이동
-
-데이터가 이동한 부분은 사용자에게 보여지지 않고 결과페이지가 전송되어야 한다.
-이렇게 페이지를 바꿔주는 것을 리디렉션redirection 이라고 한다.
-m.naver.com 처럼 주소를 바꿔준다.
-이 기능은 php언어로 구현하는 것이 아니라 script 언어로 구현한다.
+DB에 SELECT 문으로 쿼리를 날리면 결괏값을 가져오는 문장을 사용해야 한다.
 
 <pre>
-< ?php
+< ? php
+
+mysqli_fetch_row()
+mysqli_fetch_array()
+mysqli_num_rows()
+
+? >
+</pre>
+
+**mysqli_fetch_row(mysqli_query()) :**<br>
+날린 쿼리의 결괏값을 **'필드 순서'**에 따라 가져온다. 결괏값 중 첫번째 행만 출력된다.
+<br>
+
+mysqli_fetch_row($result);
+하면 $result 쿼리를 데이터베이스에 날려서 받은 결괏값의 첫번째 행만 출력한다. 게시판과 같이 여러 개의 결괏값을 보여줘야 하는 경우는 반복문 안에 담아서 출력해야한다.
+
+$row = mysqli_fetch_row($result);
+결괏값을 화면에 출력하려면 $row[2]."/".$row[3] 한다. (현재 $result에서 받아오는 값은 총 4개지만 필요한 id와 pwd는 인덱스 2과 3을 사용한다.)
+<br>
+
+**mysqli_fetch_array(mysqli_query()) :**<br>
+날린 쿼리의 결괏값을 **'필드 이름'**에 따라 가져온다. 결괏값 중 첫번째 행만 출력된다.
+<br>
+
+mysqli_fetch_array($result);를 변수에 담으면,
+$array = mysqli_fetch_array($result);
+echo $array["u_id"]."/".$array["u_pwd"];
+
+**mysqli_num_rows(mysqli_query()) :**<br>
+날린 쿼리의 결괏값의 **'행의 갯수'**를 가져온다. 결괏값이 숫자로 표시된다.
+있는지 없는지 확인할 때 유용하다.
+SELECT count(*) FROM members WHERE u_id='admin';
+과 똑같은 말이다.
+
+이것도 변수에 넣어 사용하는 것이 편하다.
+$num = mysqli_num_rows(mysqli_query($result));
+echo $num;
+
+<br>
+따라서 num_rows로 아이디가 있는지 확인한 후 패스워드 일치를 확인하기 위해서,
+fetch_row나 fetch_array 둘 중 하나는 있어야 한다.
+어차피 입력된 id 값이 데이터에 있어야 비밀번호를 비교할 수 있기 때문에 둘 중 아무거나 사용해도 된다.
+
+<br><br>
+
+###### 조건 처리하기
+
+로그인 기능 구현 시 처리해야 하는 조건은 두 가지이다.
+
+1. 조건에 맞는 아이디가 없을 때 - 즉 회원이 아닐 때.
+2. 조건에 맞는 아이디가 있을 때 - 즉 회원일 때.
+
+1번의 경우 조건에 맞는 아이디가 없기 때문에 "아이디를 다시 입력해주세요." 라는 안내 문구가 노출되면 되고 2번은 조건에 맞는 아이디가 있는 회원이 접속을 시도하는 것이기 때문에 비밀번호를 검증해 로그인 시켜주면 된다.
+
+1. 조건에 맞는 아이디가 없을 때
+
+
+만약에 num_rows로 받아온 값이 없으면! - 회원이 아니니까 메세지 출력
+
+if       ( !$num )        {
+
+       echo "
+        < script type=\"text/javascript\">
+        alert(\"일치하는 아이디가 없습니다.\");
+        history.back();
+        < /script>
+        ";
+    exit;
+
+
+아니면 (num_rows로 받아온 값이 있으면) - 회원이니까 비밀번호 검증
+else 문 안에 if문을 중첩한다.
+
+} else {
+
+$array = mysqli_fetch_array($result);
+
+array로 select로 가져온 값들을 변수에 담아 if문으로 비교한다.
+
+$g_idx = $array["idx"];
+$g_name = $array["u_name"];
+$g_id = $array["u_id"];
+$g_pwd = $array["u_pwd"];
+echo $g_idx."/".$g_name."/".$g_id."/".$g_pwd;
+
+
+
+if  ( $u_pwd != $array["u_pwd"]  )  {
+    echo "
+    < script type=\"text/javascript\">
+        alert(\"비밀번호가 일치하지 않습니다.\");
+        history.back();
+        < /script>
+        ";
+        exit; 
+
+};
+
+<br><br>
+
+###### 로그인 완료 후 Session 만들어서 유지하기
+
+지금까지 사용한 데이터들은 다른 페이지에서 사용할 수 없다.
+회원 정보를 다시 조회해서 매 페이지마다 로그인 과정을 거칠 수 없기 때문에
+하나의 홈페이지의 모든 페이지에서 이 값을 공유해야 한다.<br>
+
+
+**Session**<br>
+
+모든 페이지가 공통으로 사용하는 변수<br>
+
+
+**Session 생성**<Br>
+
+<pre>
+< ? php
+
+$_SESSION["세션변수명"] = 저장할 값;
+"세션변수명'은 직접 지어준다.
+
+
+$_SESSION["s_idx"] = $array["idx"];
+$_SESSION["s_name"] = $array["u_name"];
+$_SESSION["s_id"] = $array["u_id"];
+
+? >
+</pre>
+<br>
+
+###### Session을 사용하겠다고 알려주기
+
+문서 맨 위에 session_start();
+
+세션을 사용하려고 하는 문서에는 전부 상단에 <br>session_start();를 사용해야한다.
+
+<br>
+
+###### 페이지 이동시키기
+
+<pre>
+
+< ? php
 
 echo "
 
-    < script script type=\"text/javascript\">
-    location.href=\"result.php\";
+    < script type=\"text/javascript\">
+    location.href=\"../index.php\";
 
     </ script> 
     
 ";
+? >
 
-?>
 </pre>
-
-이 스크립트 코드를 echo에 넣어 화면에 출력하거나 
-아예 <?php ?> 코드 바깥에 넣어주면 실행된다.
-
-location.href 외에도<br>
-    //location.replace;
-    //location.reload;
-를 사용할 수 있다.
