@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PHP] PHP 수업내용"
+title:  "[PHP] PHP join 페이지 생성하기"
 author: Kenna
 date:   2021-06-09 17:26:35 +0830
 image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
@@ -243,7 +243,7 @@ https://stackoverflow.com/questions/24027546/warning-mysqli-close-expects-parame
 와 같은 오류가 생길 수 있다.
 <br>
 
-###### 결과페이지로 이동
+###### result.php 만들어서 결과 보여주기
 
 데이터가 이동한 부분은 사용자에게 보여지지 않고 결과페이지가 전송되어야 한다.
 이렇게 페이지를 바꿔주는 것을 리디렉션redirection 이라고 한다.
@@ -269,6 +269,16 @@ echo "
 아예 <?php ?> 코드 바깥에 넣어주면 실행된다.
 
 location.href 외에도<br>
-    //location.replace;
-    //location.reload;
-를 사용할 수 있다.
+<pre>
+    location.replace;
+    location.reload;
+</pre>
+를 사용할 수 있다.<br>
+
+뒤로가기 같은 페이지 이동은 (← , →) <br>
+<pre>
+history.back();
+history.forword();
+history.go(); <- 양수, 음수로 조절한다.
+
+</pre>
