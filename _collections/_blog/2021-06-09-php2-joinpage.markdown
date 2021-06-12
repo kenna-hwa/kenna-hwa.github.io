@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PHP] PHP join 페이지 생성하기"
+title:  "[PHP] 회원가입 페이지 생성하기"
 author: Kenna
 date:   2021-06-09 17:26:35 +0830
 image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60

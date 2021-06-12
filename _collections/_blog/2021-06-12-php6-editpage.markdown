@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PHP] PHP 회원정보 수정 페이지 만들기"
+title:  "[PHP] 회원정보 수정 페이지 만들기"
 author: Kenna
 date:   2021-06-12 12:26:35 +0830
 image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
@@ -66,7 +66,7 @@ $s_idx = isset($_SESSION[" s_idx"])? $_SESSION[" s_idx"] : "";
 
 include "../inc/dbcon.php";
 
-?>
+? >
 </pre>
 <br>
 
@@ -80,7 +80,7 @@ include "../inc/dbcon.php";
 
 $sql = "select * from members where idx='$s_idx';";
 
-?>
+? >
 </pre>
 
 위 쿼리는 가입된 회원 정보가 들어있는 members 테이블에 세션값인 s_idx 번호의 정보값을 전부 가져오는 문장이다.  
@@ -104,7 +104,7 @@ $result = mysqli_query($dbcon, $sql);
 
 $array = mysqli_fetch_array($result); 
 
-?>
+? >
 </pre>
 변수 $array로 넣어 각 값을 컬럼명으로 가져올 수 있다.
 <br>
@@ -122,7 +122,7 @@ $array = mysqli_fetch_array($result);
     $birth = $array["birth"];
     $bitrh = str_replace("-", "", $birth);
 
-?>
+? >
 </pre>
 <br>
 <br>
@@ -148,5 +148,159 @@ action 값으로 설정된 edit_ok.php 파일을 통해 데이터베이스에 �
 
 **회원탈퇴** 버튼은 회원 탈퇴를 하기 위한 페이지를 만들어서 클릭 시 해당 페이지로 진입할 수 있도록 한다.  
 onclick 이벤트 리스너에 페이지로 이동하는 js함수를 연결시킨다.
+<br><br>
 
+###### edit_ok.php 페이지 만들기
 
+edit.php 페이지에서 form 태그로 넘어온 edit_ok.php는 단순 데이터 전송 작업만 하기 때문에 별도로 HTML 마크업을 하지 않는다.  
+  
+가장 처음 해야할 일은 세션을 가져오고, 이전 페이지에서 넘어온 값을 변수에 담아 쿼리를 작성해 데이터베이스에 넘기는 일이다. 
+<br><br>
+  
+**세션 스타트 함수**
+<br>
+<pre>
+< ?php
+
+session_start();
+$s_idx = isset($_SESSION[" s_idx"])? $_SESSION[" s_idx"] : ""; 
+
+? >
+</pre>
+
+해당 함수를 넣어 세션을 가지고 들어온다.  
+  
+<Br>
+<br>
+
+**이전 페이지에서 값 가져오기**
+<br>
+회원정보 수정 페이지에서 post 방식으로 넘어온 각 input의 값들을 변수에 담아 받는다. 
+
+<pre>
+< ?php
+
+$u_pwd = $_POST["u_pwd"];
+$mobile = $_POST["mobile"];
+$email = $_POST["email_id"]."@".$_POST["email_dns"];
+$birth = $_POST["birth"];
+$postalCode = $_POST["postalCode"];
+$addr1 = $_POST["addr1"];
+$addr2 = $_POST["addr2"];
+
+? >
+</pre>
+<Br>
+
+위와 같이 수정이 가능한 부분만 input 태그를 열어 수정 내용을 받아준다.
+
+여기에서 특이한 점은 pwd외에 정보들은 value 값을 통해 데이터베이스의 존재하던 정보를 미리 노출했는데 이로서 정보가 수정되었는지에 상관없이 모든 정보를 한 번에 update 할 수 있다.  
+만약 필수로 입력해야 하는 정보들이 있다면 스크립트를 통해 유효성 검사를 한 다음에 submit으로 넘길 수 있도록 하는 것이 좋다. 
+<br><br>
+(나는 처음에 기존 데이터베이스 정보를 다시 다 받아서 if 문으로 서로 다른지 != 비교해서 다를 경우에 update문이 실행되도록 했는데,  
+이것보다 스크립트로 먼저 필수 입력 부분을 제대로 입력했는지 검수한 다음, 기존 정보도 그대로 update를 하면 된다는 것을 배웠다.)
+<br><br>
+
+**데이터베이스 연결**
+<br>
+데이터베이스에 수정한 정보를 전달해야하므로 include 명령어로 데이터베이스에 연결한다.  
+
+<pre>
+< ?php
+
+include "../inc/dbcon.php";
+
+? >
+</pre>
+<br><br>
+
+**쿼리 작성**
+<br>
+
+이번 쿼리는 update를 사용한다. 
+여기서 주의할 점은 **'비밀번호**는 출력되지 않은 비밀번호를 입력하지 않아도 다른 정보를 수정해 제출할 수 있는데,  
+**비밀번호가 비어있는 경우** 반드시 비밀번호를 제외한 나머지가 update가 되도록 하고,   
+**비밀번호를 입력한 경우** 비밀번호를 포함해서 전부 update하도록 해야 한다.  
+<br>
+비밀번호가 없는데 모든 정보값을 업데이트하게 되는 경우 해당 회원이 비밀번호는 null 값이 되어버린다.
+
+<br><br>
+
+**조건 처리**
+<br> 
+  
+비밀번호를 입력한 경우 - 패스워드 포함  
+<pre>
+< ?php
+
+$sql = "update members set u_pwd = '$u_pwd', mobile = '$mobile', email = '$email', birth = '$birth', postalcode = '$postalCode', addr1 = '$addr1', addr2 = 'addr2' where idx = $s_idx;";
+}else{
+
+    ?>
+</pre>
+
+비밀번호를 입력하지 않은 경우 - 패스워드 제외   
+
+<pre>
+< ?php
+
+$sql = "update members set mobile = '$mobile', email = '$email', birth = '$birth', postalcode = '$postalCode', addr1 = '$addr1', addr2 = 'addr2' where idx = $s_idx;";
+
+};
+
+? >
+</pre>
+<br><br>
+
+**쿼리 전송**
+<br>
+
+쿼리를 데이터베이스에 전송해 정보를 업데이트 한다.  
+
+<pre>
+< ?php
+
+mysqli_query($dbcon, $sql);
+
+? >
+</pre>
+<br>
+쿼리가 select 문일때는 결과를 가지고 와야 해서 (fetch 써야 해서) 변수에 담는게 좋고 아니면 그냥 써도 된다.  
+헷갈리면 일단 변수에 담아도 된다.  
+  
+<br><br>
+
+**페이지 이동**
+<br>
+
+<pre>
+< ?php
+
+echo "
+
+    < script type=\"text/javascript\">
+    alert(\"정보가 수정되었습니다.\");
+    location.href=\"edit.php\";
+
+    </ script> 
+    
+";
+
+? >
+</pre>
+<br>
+
+정보보기 페이지가 필요하다면  
+edit 페이지에서 input 태그 다 빼고 값만 받아오면 된다.  
+
+<br><br>
+
+**DB 종료** <br>  
+
+<pre>
+< ?php
+
+mysqli_close($dbcon);
+
+? >
+</pre>

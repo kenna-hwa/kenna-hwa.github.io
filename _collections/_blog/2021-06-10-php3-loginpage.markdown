@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[PHP] PHP 로그인페이지 만들기"
+title:  "[PHP] 로그인 페이지 만들기"
 author: Kenna
 date:   2021-06-10 17:26:35 +0830
 image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
@@ -16,7 +16,7 @@ tags: [PHP]
 ###### PHP
 
 
-###### 로그인페이지 만들어서 로그인 진행하기
+###### 로그인 페이지 만들어서 로그인 진행하기
 
 
 login.php 파일에 html로 페이지 구성
@@ -34,7 +34,7 @@ form action 값을 login_ok.php로 설정
 <pre>
 < ? php
 
-$u_id = $_POST["u_id"]; //post 메소드로 전달받은 u_id(로그인 아이디)값을 변수에 넣는다.
+$u_id = $_POST["u_id"]; //post 메소드로 전달받은 u_id(로그인 아이디)값을 변수에 넣는다.  
 $u_pwd = $_POST["u_pwd"];//post 메소드로 전달받은 u_pwd(로그인 패스워드)값을 변수에 넣는다.
 
 ? >
@@ -65,7 +65,8 @@ mysqli_set_charset($dbcon, "utf8");
 ? >
 </pre>
 
-위의 코드를 매번 삽입하는 것보다 외부 파일로 만들어서 삽입하는 것이 관리가 쉽다.(추후 호스트가 바뀌거나 할 때도 편하다. 외부 파일의 장점)
+위의 코드를 매번 삽입하는 것보다 외부 파일로 만들어서 삽입하는 것이 관리가 쉽다.  
+(추후 호스트가 바뀌거나 할 때도 편하다. 외부 파일의 장점)
 
 외부 파일은
 
@@ -84,8 +85,8 @@ obj.load("파일명.확장자")-jQuery
 
 **include "../inc/dbcon.php";**<br>
 
-여러가지 방법이 있는데,
-include_once는 해당 파일을 한 번 만 불러와도 될 때 사용하고
+여러가지 방법이 있는데,  
+include_once는 해당 파일을 한 번 만 불러와도 될 때 사용하고  
 require은 좀 더 엄격한 방식이다.
 [참고할 네이버 블로그]("https://m.blog.naver.com/bgpoilkj/221274098558"
 )
@@ -94,7 +95,7 @@ require은 좀 더 엄격한 방식이다.
 
 ###### 데이터베이스에서 id값과 pwd값 불러오기<br>
 
-SELECT문은 INSERT UPDATE DELETE와 다르게 결괏값을 보여준다.
+SELECT문은 INSERT UPDATE DELETE와 다르게 결괏값을 보여준다.  
 그래서 SELECT문으로 데이터베이스에 있는 id 값과 pwd 값을 확인해서 사용자가 입력한 id,pwd값과 비교할 수 있다.
 
 <pre>
@@ -107,7 +108,7 @@ $sql = "SELECT idx, u_name, u_id, u_pwd FROM members WHERE u_id='$u_id';";
 
 </pre>
 
-echo $sql; 로 값을 확인해볼 수 있다.
+echo $sql; 로 값을 확인해볼 수 있다.  
 위의 쿼리가 실행되면 사용자가 id값을 맞게 넣어준 것
 
 
@@ -153,8 +154,10 @@ mysqli_num_rows()
 날린 쿼리의 결괏값을 **'필드 순서'**에 따라 가져온다. 결괏값 중 첫번째 행만 출력된다.
 <br>
 
-mysqli_fetch_row($result);
-하면 $result 쿼리를 데이터베이스에 날려서 받은 결괏값의 첫번째 행만 출력한다. 게시판과 같이 여러 개의 결괏값을 보여줘야 하는 경우는 반복문 안에 담아서 출력해야한다.
+mysqli_fetch_row($result);  
+
+하면 $result 쿼리를 데이터베이스에 날려서 받은 결괏값의 첫번째 행만 출력한다.  
+게시판과 같이 여러 개의 결괏값을 보여줘야 하는 경우는 반복문 안에 담아서 출력해야한다.
 
 $row = mysqli_fetch_row($result);
 결괏값을 화면에 출력하려면 $row[2]."/".$row[3] 한다. (현재 $result에서 받아오는 값은 총 4개지만 필요한 id와 pwd는 인덱스 2과 3을 사용한다.)
@@ -167,14 +170,17 @@ $row = mysqli_fetch_row($result);
 mysqli_fetch_array($result);를 변수에 담으면,
 $array = mysqli_fetch_array($result);
 echo $array["u_id"]."/".$array["u_pwd"];
+<br><br>
 
 **mysqli_num_rows(mysqli_query()) :**<br>
-날린 쿼리의 결괏값의 **'행의 갯수'**를 가져온다. 결괏값이 숫자로 표시된다.
-있는지 없는지 확인할 때 유용하다.
-SELECT count(*) FROM members WHERE u_id='admin';
+날린 쿼리의 결괏값의 **'행의 갯수'**를 가져온다.  
+결괏값이 숫자로 표시된다.  
+있는지 없는지 확인할 때 유용하다.  
+SELECT count(*) FROM members WHERE u_id='admin';  
 과 똑같은 말이다.
 
-이것도 변수에 넣어 사용하는 것이 편하다.
+이것도 변수에 넣어 사용하는 것이 편하다.  
+
 $num = mysqli_num_rows(mysqli_query($result));
 echo $num;
 
@@ -187,17 +193,23 @@ fetch_row나 fetch_array 둘 중 하나는 있어야 한다.
 
 ###### 조건 처리하기
 
-로그인 기능 구현 시 처리해야 하는 조건은 두 가지이다.
+로그인 기능 구현 시 처리해야 하는 조건은 두 가지이다.  
 
-1. 조건에 맞는 아이디가 없을 때 - 즉 회원이 아닐 때.
+1. 조건에 맞는 아이디가 없을 때 - 즉 회원이 아닐 때.  
 2. 조건에 맞는 아이디가 있을 때 - 즉 회원일 때.
 
-1번의 경우 조건에 맞는 아이디가 없기 때문에 "아이디를 다시 입력해주세요." 라는 안내 문구가 노출되면 되고 2번은 조건에 맞는 아이디가 있는 회원이 접속을 시도하는 것이기 때문에 비밀번호를 검증해 로그인 시켜주면 된다.
+1번의 경우 조건에 맞는 아이디가 없기 때문에 "아이디를 다시 입력해주세요." 라는 안내 문구가 노출되면 되고  
+2번은 조건에 맞는 아이디가 있는 회원이 접속을 시도하는 것이기 때문에 비밀번호를 검증해 로그인 시켜주면 된다.
+
+<br><br>
 
 1. 조건에 맞는 아이디가 없을 때
 
 
 만약에 num_rows로 받아온 값이 없으면! - 회원이 아니니까 메세지 출력
+
+<pre>
+< ?php
 
 if       ( !$num )        {
 
@@ -208,10 +220,16 @@ if       ( !$num )        {
         < /script>
         ";
     exit;
+? >
+</pre>
 
-
+<Br>
 아니면 (num_rows로 받아온 값이 있으면) - 회원이니까 비밀번호 검증
 else 문 안에 if문을 중첩한다.
+<br>
+
+<pre>
+< ?php
 
 } else {
 
@@ -224,8 +242,11 @@ $g_name = $array["u_name"];
 $g_id = $array["u_id"];
 $g_pwd = $array["u_pwd"];
 echo $g_idx."/".$g_name."/".$g_id."/".$g_pwd;
+? >
+</pre>
 
-
+<pre>
+< ?php
 
 if  ( $u_pwd != $array["u_pwd"]  )  {
     echo "
@@ -238,16 +259,23 @@ if  ( $u_pwd != $array["u_pwd"]  )  {
 
 };
 
+? >
+
 <br><br>
 
-###### 로그인 완료 후 Session 만들어서 유지하기
-
-지금까지 사용한 데이터들은 다른 페이지에서 사용할 수 없다.
-회원 정보를 다시 조회해서 매 페이지마다 로그인 과정을 거칠 수 없기 때문에
-하나의 홈페이지의 모든 페이지에서 이 값을 공유해야 한다.<br>
+###### 조건 처리하기
 
 
-**Session**<br>
+지금까지 사용한 데이터들은 다른 페이지에서 사용할 수 없다.  
+
+회원 정보를 다시 조회해서 매 페이지마다 로그인 과정을 거칠 수 없기 때문에  
+하나의 홈페이지의 모든 페이지에서 이 값을 공유해야 한다.
+<br>
+
+
+**Session**
+
+<br>
 
 모든 페이지가 공통으로 사용하는 변수<br>
 
