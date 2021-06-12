@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-md-12">
     <h3 class="d-flex justify-content-center border-bottom">
-      <span class="m-1">My Portfolio</span>
+      <span class="m-1">Post</span>
     </h3>
   </div>
 </div>
 
-{% assign posts= site.blog | concat: site.about | concat: site.portfolio | concat: site.etc %}
+{% assign posts= site.blog %}
 {% assign top_posts = posts | sort: "rating" | reverse | slice: 0, 5 %}
 {% for post in top_posts %}
   <div class="card mb-3 border-0">
