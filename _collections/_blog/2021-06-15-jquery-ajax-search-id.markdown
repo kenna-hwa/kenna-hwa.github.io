@@ -3,7 +3,7 @@ layout: post
 title:  "[jQuery] Ajax로 중복 아이디 검색하기"
 author: Kenna
 date:   2021-06-15 17:26:35 +0830
-image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+image: https://images.unsplash.com/photo-1503437313881-503a91226402?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNvZGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 rating: 23
 description: 수업 복습
 categories : jQuery
