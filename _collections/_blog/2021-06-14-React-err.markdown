@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "[React] errno : -28, code:'ENOSPC' 오류 해결"
+author: Kenna
+date:   2021-06-13 09:26:35 +0830
+image: https://images.unsplash.com/photo-1623524142806-d08a59e73698?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDF8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+rating: 22
+description: 오류 찾기
+categories : React
+tags: React
+---
+
+###### code:'ENOSPC'
+[StackOverFlow 확인하기]("https://stackoverflow.com/questions/57605441/error-this-is-probably-not-a-problem-with-npm-there-is-likely-additional-loggi")  
+
+###### err code:'ENOSPC'
+
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.  
+
+주 메세지는 저렇다.
+골자는 npm 문제는 아닐거니까 추가적으로 다른걸 해봐라 인데
+
+첫번째 가장 유효한 답변은  
+<br>
+
+1. `package-lock.json` 과 `node_modules` 폴더를 삭제하고
+
+2. npm 캐시를 정리하고 `npm cache clean --force` 
+
+3. 다시 설치 `npm install`  
+
+<br>
+나도 이거로 성공했다.  
+  
+다시 설치하고 `npm run start` 하니까 서버연결이 되었다....!!   
+<br> 
+node 설치하고 `npm run backend` 하려고 package 파일이랑 index 파일을 만지다가 아무래도 node_modules를 건든거 같다.  
+
