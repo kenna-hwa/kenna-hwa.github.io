@@ -35,7 +35,6 @@ $num = mysqli_num_rows($result);
 ? >
 </pre>
 <br>
-
 **- 한 페이지당 글의 개수 설정하고 변수에 담기**
 <br>
 <br>
