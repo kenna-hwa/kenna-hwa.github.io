@@ -3,7 +3,7 @@ layout: post
 title:  "[React] React - 개발환경"
 author: Kenna
 date:   2021-06-29 21:26:35 +0830
-image: https://images.unsplash.com/photo-1611647832580-377268dba7cb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhwfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
 rating: 31
 description: 인프런 - 생활코딩 React 수업
 categories : React
@@ -29,9 +29,9 @@ Javascript 객체 지향 수업 먼저 들으면 좋다.
 
 <p>
 
-1. 가독성
-2. 재사용성
-3. 유지보수
+1. 가독성  
+2. 재사용성  
+3. 유지보수  
 
 </p>
 
@@ -55,16 +55,16 @@ CODING -> RUN -> DEPLOY
 
 시작하기   
 
-<온라인 플레이그라운드>   
+〈 온라인 플레이그라운드 〉   
    
 [코드샌드박스]("https://codesandbox.io/s/new")
    
-<웹 사이트에 React를 추가하기>   
+〈 웹 사이트에 React를 추가하기 〉  
 
 이미 만들어져 있는 HTML 문서에 React를 추가하기   
 나중되면 어려워질 수 있다.   
    
-<새 React 앱 만들기>   
+〈 새 React 앱 만들기 〉   
    
 툴체인을 통해 개발 환경을 셋팅할 수 있다.   
 추천해주는 앱   
@@ -72,7 +72,7 @@ CODING -> RUN -> DEPLOY
 Create React App    
 [Create React App]("https://github.com/facebook/create-react-app")  
    
-설치하기
+〈 설치하기 〉
    
 설치하기 위해 npm 이 필요하다.   
 node.js를 이용해서 만든 여러 앱을 설치할 수 있도록 만든 도구   
@@ -182,6 +182,8 @@ create-react-app 의 css 수정하는 법
 
 import 된 사용자 정의 컴포넌트와 실제 코드 안의 컴포넌트 명은 항상 같아야 하며 대문자로 시작되어야 한다.   
 App.js 안의 react 의 컴포넌트가 로드되었을 때 App.css도 같이 로드되어서 디자인을 같이 할 수 있다.   
+
+<br>
 
 ###### 배포하는 법
 
