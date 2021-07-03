@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "[React] React - 이벤트"
+author: Kenna
+date:   2021-07-03 15:26:35 +0830
+image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
+rating: 35
+description: 인프런 - 생활코딩 React 수업
+categories : React
+tags: React
+---
+
+###### React
+[Inflearn 생활코딩]("https://www.inflearn.com/course/react-%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9/dashboard")
+
+
+
+###### 이벤트 state props 그리고 render 함수
+
+애플리케이션을 역동적으로 만들어주는 event 사용해보자.  
+props, state, event가 서로 상호작용하면서 애플리케이션을 역동적으로 만든다.  
+  
+  
+해야할 일!   
+  
+1. 제목 WEB에 링크를 달아서 클릭하면 welcome 메시지가 나오게 하자.   
+2. 아래 li 링크들을 클릭하면 해당 언어의 설명이 아래에 나오게 하자.  
+  
+
+
+첫 번째  
+Subject.js에서 h1에 link 태그를 넣어준다.  
+<pre>
+import React, { Component } from 'react';
+
+
+class Subject extends Component {
+    render() {
+      return(
+      < header>
+          < h1>< a href="/">{this.props.title}< /a>< /h1>
+          {this.props.sub}
+        < /header>
+      );
+    }
+  }
+
+  export default Subject;
+</pre>
+  
+이제 화면의 링크를 클릭하면 App 컴포넌트의 state가 바뀌고  
+바뀐 state가 < Content>< /Content> 컴포넌트의 props의 값으로 전달됨으로써 동적으로 애플리케이션이 바뀌는 것을 구현할 수 있다.  
+  
+  
+state 셋팅하기  
+어떤 페이지가 welcome 페이지인지 read 페이지(읽기 페이지)인지 알아내기 위해서  
+App.js의 constructor 함수의 state에다가 mode라는 값을 준다.  
+기본값으로 welcome을 준다.  
+그리고 mode가 welcome일 때, content 영역에 표시할 텍스트도 지정해준다.  
+  
+
+<pre>
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      mode: 'welcome',
+      subject:{title:'WEB', sub: 'world wide web!'},
+      welcome:{title:'welcome', decs:'Hello, React'},
+      contents:[
+        {id: 1, title: 'HTML', desc: 'HTML is information...'},
+        {id: 2, title: 'CSS', desc: 'CSS is design...'},
+        {id: 3, title: 'Javascript', desc: 'Javascript is interactive...'}
+      ]
+    }
+  }
+  render() {
+    return (
+      < div className="App">
+        < Subject title={this.state.subject.title} sub={this.state.subject.sub}>< /Subject>
+        < TOC data={this.state.contents}>< /TOC>
+        < Content title="HTML" desc="HTML is Hypertext Markup Language.">< /Content>
+      < /div>
+    );
+
+  }
+}
+</pre>
+
+
+<br>
+
+###### 이벤트 설치
+
+<br>
+
+###### 이벤트에서 state 변경하기
+
+<br>
+
+###### 이벤트 bind 함수 이해하기
+
+<br>
+
+###### 이벤트 setState 함수 이해하기
+
+
+<br>
+
+###### 컴포넌트 이벤트 만들기 1
+
+<br>
+
+###### 컴포넌트 이벤트 만들기 2
+
+<br>
+
+###### 컴포넌트 이벤트 만들기 3
