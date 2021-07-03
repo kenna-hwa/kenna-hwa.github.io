@@ -44,7 +44,7 @@ component가 좋은 부품이 되기 위해서는
 component를 사용하는 외부의 props와  
 props에 따라 component를 실제로 구현하는 내부의 state 정보가 철저히 분리되어야 한다.  
 
-![state와 props]("assets\images\blog\react\react.jpg")
+![state와 props]("https://github.com/kenna-hwa/kenna-hwa.github.io/blob/master/assets/images/blog/react/react.jpg?raw=true")
 
 <br>
 
@@ -133,7 +133,7 @@ ReactDOM.render(
 **좋은 사용성**을 만드는 핵심이다.  
 <br>
 
-![내부 부품이 다 보일 필요는 없다.]("assets\images\blog\react\brokenphone.jpg")
+![내부 부품이 다 보일 필요는 없다.]("https://github.com/kenna-hwa/kenna-hwa.github.io/blob/master/assets/images/blog/react/brokenphone.jpg?raw=true")
 <br>
 
 App이 내부적으로 사용하는 상태는 state를 사용한다.  
