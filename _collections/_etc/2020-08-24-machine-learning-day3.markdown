@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "생활코딩 : 머신러닝 야학 3"
-date:   2020-08-22 20:53:33 +0830
+date:   2020-08-24 20:53:33 +0830
 image: https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFjaGluZSUyMGxlYXJuaW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
 rating: 5
 ---
