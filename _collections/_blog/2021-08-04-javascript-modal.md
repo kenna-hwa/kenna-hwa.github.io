@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Javascript] error: RPC failed; curl 55 Send failure: Connection was aborted"
+title:  "[Javascript] 모달Modal창 만들기"
 author: Kenna
 date:   2021-08-04 21:26:35 +0830
 image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
@@ -14,11 +14,10 @@ tags: Javascript
 
 웹에 포트폴리오를 올려놓고나니 클론 코딩한 페이지에는  
 안내를 하는 문구가 있으면 좋겠다는 생각을 했다.  
+링크를 들어가서 window가 로딩되자 마자 모달창을 클릭해야 내가 만든 페이지를 볼 수 있는 모달창을 만들어보자.
 
 <br>
-
-새 창 팝업 대신 모달창을 이용해서 클론코딩 페이지에 안내 멘트를 넣어보자.  
-생각보다 간단한 구조인데  
+모달창 구현은 생각보다 간단한 구조인데 나중에 ajax를 써서 뭔가를 입력받는다거나 하면 그땐 좀 머리아플거 같긴 하다 ....
 <br>
 
 우선 HTML 아무데나(헤더 위에도 괜찮을듯 문서 구조상 먼저 나오니) HTML 코드를 만든다.
@@ -95,7 +94,7 @@ display: block;
 ```
 <br>
 
-**CSS**<Br>
+**Javascript**<Br>
 
 <br>
 
