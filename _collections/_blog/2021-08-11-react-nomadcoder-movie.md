@@ -3,7 +3,7 @@ layout: post
 title:  "[React] 필모그래피 영화 앱 만들기"
 author: Kenna
 date:   2021-08-11 13:26:35 +0830
-image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
+image: https://images.unsplash.com/photo-1591267990439-bc68529677c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1336&q=80
 rating: 46
 description: React로 영화 앱 만들기
 categories : React
@@ -110,7 +110,7 @@ DOM은 브라우저가 화면을 그리기 위한 정보를 가진 문서고
 
 <br>
 
-![reactVirtualDOM]("http://kenna.dothome.co.kr/hidden/images/blog_react_1.jpg")
+![reactVirtualDOM](http://kenna.dothome.co.kr/hidden/images/blog_react_1.jpg)
 
 <br>
 
