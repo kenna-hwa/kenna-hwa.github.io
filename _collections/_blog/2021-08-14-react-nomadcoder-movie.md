@@ -19,6 +19,7 @@ tags: React
 리액트가 컴포넌트를 생성하고 없애는 주기를 가진다.  
 
 <br>
+<br>
 
 **Mounting**
 <br>
@@ -32,9 +33,8 @@ componentDidMount()는 리액트에게 '이 컴포넌트는 처음 렌더링 되
 <br>
 
 순서는  
-<br>
 
-`browser ON`    
+`=> browser ON`    
   
 
 `constructor()`  
@@ -43,15 +43,19 @@ componentDidMount()는 리액트에게 '이 컴포넌트는 처음 렌더링 되
 
 순이다. 
 
+<br>
+<br>
+
+
 **Updating**
 <br>
 
 업데이트는 사용자가 인터렉션 했을 때 발생한다.  
 사용자의 상호작용으로 인해 데이터가 변경되는 경우(setState가 호출되는 경우)    
 
-<br>
 
-`setState`
+`=> setState()`
+
 
 `render()`   
 `componentDidUpdate()`  
@@ -59,9 +63,14 @@ componentDidMount()는 리액트에게 '이 컴포넌트는 처음 렌더링 되
 가 순차적으로 실행된다.  
 setState가 호출되면, component를 호출하고, render를 호출한 다음  
 업데이트가 완료되면 componentDidUpdate를 실행하는 순서다.  
+<br>
+<br>
 
 **Unmounting**
 <br>
 페이지를 이동할 때 컴포넌트는 죽는다.
 
 `componentWillUnmount()`으로 확인할 수 있다.  
+
+<br>
+<br>
