@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[React] 필모그래피 영화 앱 만들기 4"
+title:  "[React] 필모그래피 영화 앱 만들기 5"
 author: Kenna
 date:   2021-08-14 20:26:35 +0830
 image: https://images.unsplash.com/photo-1591267990439-bc68529677c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1336&q=80
