@@ -99,9 +99,9 @@ import '../css/Navigation.css';
 function Navigation(){
     return (<section className="nav">
         <Link to="/" className="nav_home">Home</Link>
-        <Link to={{ pathname: '/about',
+        <Link to= { { pathname: '/about',
                     state:{ fromNavigation: true },
-        }} className="nav_about">About</Link>
+        } } className="nav_about">About</Link>
         <Link to="/movielist" className="nav_movielist">Filmos</Link>
     </section>)
 }
