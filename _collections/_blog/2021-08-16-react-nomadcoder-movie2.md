@@ -99,9 +99,11 @@ import '../css/Navigation.css';
 function Navigation(){
     return (<section className="nav">
         <Link to="/" className="nav_home">Home</Link>
-        <Link to= { { pathname: '/about',
+        <Link to= {
+            　{ pathname: '/about',
                     state:{ fromNavigation: true },
-        } } className="nav_about">About</Link>
+        }　
+        } className="nav_about">About</Link>
         <Link to="/movielist" className="nav_movielist">Filmos</Link>
     </section>)
 }
@@ -121,10 +123,12 @@ class Movie extends React.Component{
     render(){
     const {year, title} = this.props;
 
-    return ( <Link to={{
+    return ( <Link to={　
+        {
         pathname: '/movie-detail',
         state: {year, title}
-    }}>
+    }　
+    }>
     <article className="movies_info">
         <div className="movies_text">
             <h4 className="movies_title">{ title }</h4> 
