@@ -108,3 +108,32 @@ css 폴더를 만들어 Scss 파일을 만든다.
 <br>
 
 
+###### 여기서 잠깐
+
+<br>
+
+이렇게 작업을 하던 중 콘솔에 key props 오류가 뜨는 것을 발견했다.  
+노마드코더의 작업물과 별반 다르지 않아 오류 확인을 안했는데  
+강의에서는 `<Movie />` 컴포넌트를 div 에 담아 Movie 컴포넌트가 map으로 순회하고  
+나는 `<li>`로 돌렸기 때문에 리액트가 반복되고 있는 `<li>`에 key 값을 확인하지 못해서  
+계속 에러를 뱉고 있던 것.  
+
+왜 에러가 나는지 한참 찾다 보니 `<li>`에 key props를 넣으면 될 거 같아서 실행했더니 에러가 사라졌다.   
+
+수정한 코드는 아래와 같다.  
+
+<br><br>
+
+```
+<ul className="movies_list">
+  {movies.map (movies=> {
+    return <li key={movies.movieCd} > //여기에 key props가 들어가야 했다.
+      <Movie
+      id={movies.movieCd} 
+      title={movies.movieNm} 
+      year={movies.movieCd} 
+      />
+    </li>
+  })}
+</ul>
+```
