@@ -40,7 +40,7 @@ composedPath()는 **이벤트 버블링bubbling** 개념을 이용해
   
 
 반대의 경우는 *이벤트 캡쳐링capturing*인데 이 경우는 거의 쓰이지 않는다.  
-이것은 **이벤트 위임delegation**의 토대가 되는 이벤트 핸들링 개념이다.   
+이것은 [이벤트 위임delegation](https://ko.javascript.info/event-delegation)의 토대가 되는 이벤트 핸들링 개념이다.   
 
   
 상단의 HTML 코드에 이벤트 위임을 적용해  
@@ -69,8 +69,8 @@ class Favorite{
 <br>
 
 여기에서 **this**는 클래스가 생성할 인스턴스를 가리키고  
-인스턴스 내부에 favoriteElement라는 프로퍼티 키와  
-그 값으로 document.querySelector(".content-favorite");을 선언한다.
+인스턴스 내부에 ```favoriteElement```라는 프로퍼티 키와  
+그 값으로 ```document.querySelector(".content-favorite");```을 선언한다.
 
 클릭되는 값은 각각 `button-recommend`와 `button-heart` 두 개의 클래스이지만  
 `content-favorite`에 적용한다.  
@@ -112,7 +112,7 @@ class Favorite{
 이 bindEvents() 함수에 cPath 상수를 선언하고  
 이벤트 핸들러의 event 인자에 **composedPath() 메소드**를 선언해준다.  
 event에 composedPath()를 적용하면 **이벤트가 전파되는 경로를 배열값으로 반환**하게 된다.  
-composedPath()를 console.log로 찍어보면 다음과 같이 경로를 알 수 있다.  
+composedPath()를 ```console.log```로 찍어보면 다음과 같이 경로를 알 수 있다.  
 <br>
 
 ```
@@ -144,9 +144,10 @@ length: 11
 cPath의 요소들이 element에 담겨 조건을 확인하게 되는데,  
 element의 태그 이름이 "BUTTON"과 같은 요소들만 다시 element라는 상수에 담기게 된다.  
 
-*"BUTTON"은 "button"처럼 소문자가 되면 적용되지 않는다.
 
 ```js
+//"BUTTON"은 "button"처럼 소문자가 되면 적용되지 않는다.
+
 const element = cPath.find(element=>element.tagName == "BUTTON")
 ```
 
@@ -220,7 +221,13 @@ element의 CSS에 클래스를 넣고 뺼 수 있도록 **classList를 이용해
 ```
 <br>
 
+element("BUTTON" 조건에서 걸러내진 요소)가 클릭되었을 때, element.classList에 `on`이 토글된다.
+<br>
+
+
 ```js
+//components/index.js
+
  element.classList.toggle('on');
 ```
 <br>
