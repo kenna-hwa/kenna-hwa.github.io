@@ -29,8 +29,8 @@ tags: Javascript
 </div>
 ```
 
-composedPath()는 **이벤트 버블링bubbling** 개념을 이용해  
-<strong style="color:red">이벤트의 경로를 배열값으로 반환하는 배열 메소드다.</strong> 
+<strong style="color:red">composedPath()는 이벤트 버블링bubbling 개념을 이용해  
+이벤트의 경로를 배열값으로 반환하는 배열 메소드다.</strong> 
 <br>
 
 **이벤트 버블링bubbling**은  
