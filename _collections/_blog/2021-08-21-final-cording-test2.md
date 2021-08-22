@@ -33,6 +33,8 @@ tags: Javascript
 이벤트의 경로를 배열값으로 반환하는 배열 메소드다.</strong> 
 <br>
 
+[composedPath() MDN 문서](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath)
+
 **이벤트 버블링bubbling**은  
 한 요소에 이벤트가 발생하면, 그 요소에 할당된 이벤트 핸들러가 동작하고, 이어서 부모 요소의 핸들러가 동작한다.  
 가장 최상단의 조상 요소를 만날 때까지 이 과정이 반복되면서 요소 각각에 할당된 핸들러가 동작한다.  
