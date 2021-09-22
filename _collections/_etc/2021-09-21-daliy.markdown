@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "수다"
+date:   2021-09-21 00:23:33 +0830
+image: https://images.unsplash.com/photo-1455637350775-730a9e5a8310?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGhhcHB5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+rating: 7
+---
+
+###### 취뽀
+  <br>
+
+7월만 해도 취업을 해야하는 위기감이 크지 않았는데,  
+8월을 넘기니 목을 졸라오는 위기감이 들어서 힘들었다.  
+감사하게도 나의 가치를 크게 봐주시는 곳이 있어서 운이 좋게 합격했고  
+첫 출근을 위해 매일매일 신변 정리와 주변 정리를 하고 있다.  
+  <br>
+
+새로운 노트북을 구매해 레포지토리 pull을 땡기다가 한 번 들어 엎었다.  
+pull request도 잘 써야할텐데 두렵다..  
+  
+  <br>
