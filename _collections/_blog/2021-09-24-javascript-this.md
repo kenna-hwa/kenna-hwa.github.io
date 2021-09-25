@@ -84,6 +84,8 @@ var yourDinner = {
 
 var menuGlobalForMe = menuGlobal.bind(myDinner)
 ```
+<br>
+
 
 menuGlobalForMe 변수에는 menuGlobal 함수가 바라보는 객체가 myDinner로 고정된 새로운 함수가 들어가게 된다.  
 <br>
@@ -93,5 +95,11 @@ menuGlobalForMe 변수에는 menuGlobal 함수가 바라보는 객체가 myDinne
 <br>
 
 화살표 함수의 this는 일반적인 this처럼 함수를 호출한 객체를 할당하지 않고, 바로 상위 스코프의 this를 할당  
-
+forEach의 경우 window 객체를 바라보는데 forEach에도 화살표 함수를 쓰면 상위 스코프의 this를 사용할 수 있다.  
 <br>
+<br>
+
+- this는 함수를 호출하는 객체를 의미
+- call()과 apply()는 this에 할당되는 객체를 지정할 수 있다.  
+- bind()는 this에 할당되는 객체가 고정된 새로운 함수를 생성한다.  
+- 화살표 함수에서 this는 상위 스코프의 객체를 할당받는다.  
