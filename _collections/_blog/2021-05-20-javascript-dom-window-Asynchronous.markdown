@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript DOM] 비동기 프로그래밍"
 author:  Kenna
 date:   2021-05-20 15:40:35 +0830
-image: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.dG-yexYrhUA2RommlI9TmQHaEK%26pid%3DApi&f=1
+image: https://images.unsplash.com/photo-1601277010173-01291b16774b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80
 rating: 7
 description: MDN 문서 | 일반적인 비동기 프로그래밍 개념
 categories : [DOM]

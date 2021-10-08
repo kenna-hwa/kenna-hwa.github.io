@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript DOM] QuerySeletor"
 author: Kenna
 date:   2021-05-14 14:50:35 +0830
-image: https://images.unsplash.com/photo-1586162481176-7abc53f1f7c2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODZ8fHN0dWR5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
 rating: 4
 description: 수업 복습
 categories : [Javascript]

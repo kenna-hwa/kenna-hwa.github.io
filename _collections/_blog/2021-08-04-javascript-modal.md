@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript] 모달Modal창 만들기"
 author: Kenna
 date:   2021-08-04 21:26:35 +0830
-image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
+image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
 rating: 43
 description: Javascript로 모달Modal창 만들기
 categories : Javascript

@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript] a 태그 스크립트 사용하기"
 author: Kenna
 date:   2021-07-19 21:26:35 +0830
-image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
+image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
 rating: 42
 description: 자바스크립트 공부
 categories : Javascript

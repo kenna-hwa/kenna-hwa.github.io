@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript DOM] window 객체"
 author:  Kenna
 date:   2021-05-20 15:20:35 +0830
-image: https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcodinghelptech.com%2Fblog_post%2Fdomdocument-object-model-4-638.jpg&f=1&nofb=1
+image: https://images.unsplash.com/photo-1601277010173-01291b16774b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80
 rating: 8
 description: 네이버 부스트코스 강의 정리
 categories : [DOM]

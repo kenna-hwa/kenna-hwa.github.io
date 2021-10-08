@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript] call, apply, bind"
 author: Kenna
 date:   2021-09-24 11:26:35 +0830
-image: https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1343&q=80
+image: http://hdblackwallpaper.com/wallpaper/2015/07/black-and-white-landscape-photography-1-background-wallpaper.jpg
 rating: 59
 description: 코딩인터뷰를 저격하는 JS 스나이퍼 양성학교 - 좀 더 this 하기 < call, apply, bind >
 categories : Javascript

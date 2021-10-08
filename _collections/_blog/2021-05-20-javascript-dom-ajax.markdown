@@ -3,7 +3,7 @@ layout: post
 title:  "[Javascript DOM] Ajax통신의 이해"
 author:  Kenna
 date:   2021-05-20 23:40:35 +0830
-image: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP._WzzKR8jCL6UXF0KC-haGwHaE7%26pid%3DApi&f=1
+image: https://images.unsplash.com/photo-1601277010173-01291b16774b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80
 rating: 10
 description: 네이버 부스트코스 강의 정리
 categories : [DOM]
