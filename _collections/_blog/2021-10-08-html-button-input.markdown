@@ -4,7 +4,7 @@ title:  "[HTML] button 태그와 input type="submit"과의 차이 "
 author: Kenna
 date:   2021-10-08 11:26:35 +0830
 image: https://images.unsplash.com/photo-1592825508076-d59e805443cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTh8fGNvb2tpZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
-rating: 60
+rating: 63
 description: [HTML] button 태그와 input type="submit"과의 차이
 categories : HTML
 tags: HTML

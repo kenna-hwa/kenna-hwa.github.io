@@ -4,7 +4,7 @@ title:  "[Github] git pull과 clone의 차이"
 author: Kenna
 date:   2021-10-06 11:26:35 +0830
 image: https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80
-rating: 59
+rating: 62
 description: git pull과 clone의 차이
 categories : Github
 tags: Github
