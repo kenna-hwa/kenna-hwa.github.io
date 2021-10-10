@@ -3,7 +3,7 @@ layout: post
 title:  "[HTTP] HTTP protocol"
 author: Kenna
 date:   2021-05-19 22:45:00 +0830
-image: https://images.unsplash.com/photo-1592825508076-d59e805443cc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTh8fGNvb2tpZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60
+image: https://images.unsplash.com/photo-1472437774355-71ab6752b434?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80
 rating: 5
 description: MDN 문서 | HTTP 개요
 categories : [HTML]
