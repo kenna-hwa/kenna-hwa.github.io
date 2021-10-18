@@ -86,3 +86,10 @@ Start Command... 루비 콘솔창에서 블로그 저장 폴더로 이동하거�
 <br>
 <br>
 
+`jekyll serve` 안되는 경우  
+해당 폴더에서 `bundle install`을 해주고  
+<br>
+
+`bundle exec jekyll serve` 명령어를 사용하면 로컬로 볼 수 있다.  
+로컬 주소의 경우 http://127.0.0.1:4000/  
+로컬에서 빠져나올 때는 터미널에서 ctrl + c 를 이용한다.
