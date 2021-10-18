@@ -7,7 +7,7 @@ image: https://images.unsplash.com/photo-1522776851755-3914469f0ca2?ixid=MnwxMjA
 rating: 64
 description: jekyll 블로그 설치를 위한 ruby 설치 과정 기록
 categories : Ruby
-tags: Ruby
+tags: [tag1]
 ---
 
 ###### jekyll 블로그 설치를 위한 ruby 설치 과정 기록

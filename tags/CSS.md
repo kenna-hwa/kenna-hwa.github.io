@@ -1,6 +1,6 @@
 ---
 
-layout: blog_by_tag
+layout: blogbytag
 tag: CSS
 permalink: /tags/CSS
 

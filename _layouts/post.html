@@ -5,38 +5,26 @@ layout: default
   <h1 class="col-md-5 mx-auto mb-5 d-flex justify-content-center text-light">{{ page.title }}</h1>
 
   <p class="post-meta">Posted on {{ page.date | date: "%b %-d, %Y" }}
-    <!-- {% if page.tags %}
+    {% if page.tags %}
     {% for tag in page.tags %}
     <a class="label">#{{ tag }}</a> &nbsp;
     {% endfor %}
-    {% endif %} -->
-    {% assign post = page %} 
-    {% if post.tags.size > 0 %} 
-    {% capture tags_content %}Tags{% if post.tags.size == 1 %}
-    <i class="fa fa-tag"></i>
-    {% else %}
-    <i class="fa fa-tags"></i>
-    {% endif %}: 
-    {% endcapture %} 
-    {% for post_tag in post.tags %} 
-    {% for data_tag in site.data.tags %} 
-    {% if data_tag.slug == post_tag %} 
-    {% assign tag = data_tag %} 
-    {% endif %} 
-    {% endfor %} 
-    {% if tag %} 
-    {% capture tags_content_temp %}
-    {{ tags_content }}
-    <a href="/tags/{{ tag.slug }}/">{{ tag.name }}</a>
-    {% if forloop.last == false %},
     {% endif %}
-    {% endcapture %} 
-    {% assign tags_content = tags_content_temp %} 
-    {% endif %} 
-    {% endfor %} 
-    {% else %} 
-    {% assign tags_content = '' %} 
-    {% endif %}
+    
+  </p>
+  <p class="lead text-light mb-5">
+    {% assign post = page %} {% if post.tags.size > 0 %} {% capture tags_content
+      %}Tags{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i
+        class="fa fa-tags"
+      ></i
+      >{% endif %}: {% endcapture %} {% for post_tag in post.tags %} {% for
+      data_tag in site.data.tags %} {% if data_tag.slug == post_tag %} {% assign tag
+      = data_tag %} {% endif %} {% endfor %} {% if tag %} {% capture
+      tags_content_temp %}{{ tags_content }}<a href="/tags/{{ tag.slug }}/"
+        >{{ tag.name }}</a
+      >{% if forloop.last == false %}, {% endif %}{% endcapture %} {% assign
+      tags_content = tags_content_temp %} {% endif %} {% endfor %} {% else %} {%
+      assign tags_content = '' %} {% endif %}
   </p>
 
   <p class="lead text-light">{{ page.description }}</p>
