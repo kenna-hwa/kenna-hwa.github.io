@@ -25,6 +25,7 @@ include: ["_pages"]
 collections_dir: _collections
 twitter_username: 
 github_username:  kenna-hwa
+paginate: 10
 
 # Build settings
 markdown: kramdown
