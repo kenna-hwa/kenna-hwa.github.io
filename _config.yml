@@ -17,7 +17,7 @@ title: Kenna
 author: Kenna
 email: kenna.hwa@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  FrontEnd Develope Study Blog
+  FrontEnd Developer Kenna
 baseurl: "" # the subpath of your site, e.g. /blog
 google_analytics: 'G-DRXZ378DMR' # change this to your GA key
 url: "http://kenna-hwa.github.io" # the base hostname & protocol for your site, e.g. http://example.com
